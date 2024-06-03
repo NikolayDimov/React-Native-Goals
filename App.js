@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, View, Button, TextInput, FlatList } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
@@ -30,9 +31,10 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.appContainer}>
+
         <Button
           title='Add New Goal'
-          color='#5e0acc'
+          color='#a065ec'
           onPress={startAddGoalhandler}
         />
         {modalIsVisible && <GoalInput visible={modalIsVisible} onAddGoal={addGoalhandler} onCancel={endAddGoalhandler} />}
@@ -57,6 +59,7 @@ export default function App() {
             ))}
           </ScrollView> */}
         </View>
+
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -66,7 +69,8 @@ const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     paddingTop: 40,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    backgroundColor: '#1e085a'
   },
 
   goalsContainer: {
